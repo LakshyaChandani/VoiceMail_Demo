@@ -1,0 +1,117 @@
+/* --- Base Styles & New Color Palette --- */
+body {
+  background-color: #0f172a; /* Midnight Blue */
+  color: #e2e8f0; /* Light Slate Gray */
+  font-family: "Poppins", sans-serif; /* New Google Font */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align to the top */
+  min-height: 100vh;
+  margin: 0;
+  padding-top: 8vh;
+  text-align: center;
+}
+
+.container {
+  max-width: 600px;
+  width: 90%;
+}
+
+/* --- Typography & Accent Color --- */
+h1 {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: #94a3b8; /* Muted Slate */
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-weight: 600;
+  color: #38bdf8; /* Sky Blue Accent */
+  border-bottom: 1px solid #1e293b; /* Darker Slate */
+  padding-bottom: 10px;
+  margin-top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- Button Styling --- */
+button {
+  background-color: #0ea5e9; /* Brighter Sky Blue */
+  color: white;
+  border: none;
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  cursor: pointer;
+  border-radius: 50px; /* Rounded pill shape */
+  margin: 20px 0;
+  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(14, 165, 233, 0.35);
+}
+
+/* --- Box Styling (Using Shadows instead of Borders) --- */
+.status-box,
+.transcript-box {
+  background-color: #1e293b; /* Darker Slate */
+  border: 1px solid #334155;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-top: 25px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+#status,
+#transcript {
+  font-size: 1.1rem;
+  font-style: normal;
+  font-weight: 300;
+  min-height: 25px;
+  line-height: 1.6;
+}
+
+#transcript {
+  color: #94a3b8; /* Muted for contrast */
+}
+
+/* --- Dynamic "Listening" Indicator --- */
+#status-indicator {
+  width: 10px;
+  height: 10px;
+  background-color: #475569; /* Default gray */
+  border-radius: 50%;
+  margin-left: 12px;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+#status-indicator.listening {
+  background-color: #38bdf8; /* Sky Blue Accent */
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(56, 189, 248, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+  }
+}
